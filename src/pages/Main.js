@@ -1,17 +1,28 @@
 import "../styles/Main.css";
 import React, { useState } from "react";
 import { Configuration, OpenAIApi } from "openai";
+import { v4 as uuidv4 } from "uuid";
 
 const Main = () => {
   const [status, setStatus] = useState("COMMAND");
   const [prompt, setPrompt] = useState("");
-  const [result, setResult] = useState("Waiting for your command...");
+  const [result, setResult] = useState("");
+  const arrayOfObjects = [];
+  const uniqueId = uuidv4();
+
+  const [content, setContent] = useState([
+    {
+      id: "",
+      prompt: "",
+      response: "",
+    },
+  ]);
 
   const onSubmit = (e) => {
     e.preventDefault();
 
     const configuration = new Configuration({
-      apiKey: "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",
+      apiKey: process.env.OPENAI_API_KEY,
     });
     setStatus("THINKING...");
     const openai = new OpenAIApi(configuration);
@@ -27,7 +38,12 @@ const Main = () => {
       })
       .then((response) => {
         setResult(response.data.choices[0].text);
-        console.log(result);
+        setContent({
+          id: uniqueId,
+          prompt: prompt,
+          response: result,
+        });
+
         setStatus("COMMAND AGAIN");
       })
       .catch((error) => console.log(error.message));
@@ -64,7 +80,7 @@ const Main = () => {
               {status}
             </button>
           </form>
-          <div className="main__result">{result}</div>
+          <div className="main__result">{arrayOfObjects}</div>
         </main>
       </div>
     </section>
