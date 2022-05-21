@@ -1,0 +1,125 @@
+/* ====================================
+        VARIABLES
+======================================= */
+
+:root {
+  --font-thin: "axiformathin", sans-serif;
+  --font-light: "axiformalight", sans-serif;
+  --font-regular: "axiformaregular", sans-serif;
+  --font-medium: "axiformamedium", sans-serif;
+  --font-semibold: "axiformasemibold", sans-serif;
+  --font-heavy: "axiformaheavy", sans-serif;
+
+  --color-dark: #1c1c1c;
+  --color-bright: #ffffff;
+  --color-third: #ed1c24;
+
+  --color-dark-two: grey;
+  --color-third-two: orange;
+  --color-dark-three: indigo;
+  --color-third-three: rgb(154, 154, 0);
+}
+
+/* ====================================
+              STARTERS
+======================================= */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-thin);
+  font-size: 100%;
+  background-color: var(--color-bright);
+  line-height: 1.6;
+}
+
+.section {
+  position: relative;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a:link,
+a:visited,
+a:active {
+  text-decoration: none;
+}
+
+/* ====================================
+            TYPOGRAPHY
+======================================= */
+
+h2,
+button {
+  text-transform: uppercase;
+}
+
+.section-title {
+  font-family: var(--font-regular);
+  font-size: 3rem;
+  text-transform: capitalize;
+  text-align: center;
+  margin-top: 3em;
+  line-height: 3.5rem;
+}
+
+input,
+textarea,
+::placeholder {
+  font-family: var(--font-light);
+  font-size: 1rem;
+  line-height: 1.7;
+  padding-left: 0.5em;
+  margin-top: 1em;
+}
+
+input,
+textarea {
+  color: var(--color-dark);
+}
+
+::placeholder {
+  color: rgb(191, 189, 189);
+}
+
+/* ====================================
+            LAYOUT
+======================================= */
+
+.section {
+  width: 100%;
+  background-color: var(--color-dark);
+  overflow: hidden;
+}
+
+.container {
+  max-width: 85em;
+  margin: 0 auto;
+}
+
+.tcolor-hird {
+  color: var(--color-third);
+}
+
+/* ====================================
+            MEDIA QUERY
+======================================= */
+
+@media only screen and (min-width: 20em) {
+}
+
+@media only screen and (min-width: 48em) {
+}
+
+@media only screen and (min-width: 62em) {
+}
+
+@media only screen and (min-width: 75em) {
+}

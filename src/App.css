@@ -1,0 +1,151 @@
+/* ====================================
+        VARIABLES
+======================================= */
+:root {
+  --font-thin: "axiformathin", sans-serif;
+  --font-light: "axiformalight", sans-serif;
+  --font-regular: "axiformaregular", sans-serif;
+  --font-medium: "axiformamedium", sans-serif;
+  --font-semibold: "axiformasemibold", sans-serif;
+  --font-heavy: "axiformaheavy", sans-serif;
+  --color-dark: #1c1c1c;
+  --color-bright: #ffffff;
+  --color-third: #ed1c24;
+  --color-dark-two: grey;
+  --color-third-two: orange;
+  --color-dark-three: indigo;
+  --color-third-three: rgb(154, 154, 0);
+}
+
+/* ====================================
+              STARTERS
+======================================= */
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-thin);
+  font-size: 100%;
+  background-color: var(--color-bright);
+  line-height: 1.6;
+}
+
+.section {
+  position: relative;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a:link,
+a:visited,
+a:active {
+  text-decoration: none;
+}
+
+/* ====================================
+            TYPOGRAPHY
+======================================= */
+h2,
+button {
+  text-transform: uppercase;
+}
+
+.section-title {
+  font-family: var(--font-regular);
+  font-size: 3rem;
+  text-transform: capitalize;
+  text-align: center;
+  margin-top: 3em;
+  line-height: 3.5rem;
+}
+
+input,
+textarea,
+::-webkit-input-placeholder {
+  font-family: var(--font-light);
+  font-size: 1rem;
+  line-height: 1.7;
+  padding-left: 0.5em;
+  margin-top: 1em;
+}
+
+input,
+textarea,
+:-ms-input-placeholder {
+  font-family: var(--font-light);
+  font-size: 1rem;
+  line-height: 1.7;
+  padding-left: 0.5em;
+  margin-top: 1em;
+}
+
+input,
+textarea,
+::-ms-input-placeholder {
+  font-family: var(--font-light);
+  font-size: 1rem;
+  line-height: 1.7;
+  padding-left: 0.5em;
+  margin-top: 1em;
+}
+
+input,
+textarea,
+::placeholder {
+  font-family: var(--font-light);
+  font-size: 1rem;
+  line-height: 1.7;
+  padding-left: 0.5em;
+  margin-top: 1em;
+}
+
+input,
+textarea {
+  color: var(--color-dark);
+}
+
+::-webkit-input-placeholder {
+  color: #bfbdbd;
+}
+
+:-ms-input-placeholder {
+  color: #bfbdbd;
+}
+
+::-ms-input-placeholder {
+  color: #bfbdbd;
+}
+
+::placeholder {
+  color: #bfbdbd;
+}
+
+/* ====================================
+            LAYOUT
+======================================= */
+.section {
+  width: 100%;
+  background-color: var(--color-dark);
+  overflow: hidden;
+}
+
+.container {
+  max-width: 85em;
+  margin: 0 auto;
+}
+
+.tcolor-hird {
+  color: var(--color-third);
+}
+
+/* ====================================
+            MEDIA QUERY
+======================================= */
+/*# sourceMappingURL=App.css.map */

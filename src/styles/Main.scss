@@ -1,0 +1,68 @@
+.main {
+    font-family: var(--font-light);
+    background-color: var(--color-dark);
+    color: var(--color-bright);
+    height: 100vh;
+    }
+    
+    .main .container { 
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 60%;
+    }
+    
+    .main__result {
+    color: var(--color-bright);
+    font-family: var(--font-medium);
+    font-size: 3rem;
+    }
+    
+    
+    h1 {
+    font-family: var(--font-semibold);
+    font-size: 3rem;
+    margin: 3em 0 2em 0;
+    text-align: center;
+    }
+    
+    label {
+    font-family: var(--font-medium);
+    }
+    
+    label,
+    textarea {
+    display: block;
+    margin-bottom: 1em;
+    }
+    
+    textarea {
+    width: 100%;
+    height: 5em;
+    }
+    
+    
+    /* ====================================
+                    BUTTON
+    ======================================= */
+    
+    .btn {
+    display: inline-block;
+    font-family: var(--font-medium);
+    font-size: 1rem;
+    padding: 0.7em 2em;
+    cursor: pointer;
+    }
+    
+    .btn--color-third {
+    color: var(--bright-color);
+    border: 1px solid var(--third-color);
+    background-color: var(--third-color);
+    transition: all 0.2s ease;
+    }
+      
+    .btn--color-third:hover {
+    transform: translate(5px, -5px);
+    box-shadow: var(--third-color) 0px 0px 0px 0px inset,
+    var(--dark-color) -5px 5px 0px -1px, var(--third-color) -5px 5px;
+    }
