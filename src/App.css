@@ -52,79 +52,94 @@ a:active {
 /* ====================================
             TYPOGRAPHY
 ======================================= */
-h2,
+h1 {
+  font-family: var(--font-semibold);
+  font-size: 3rem;
+  margin: 3em 0 2em 0;
+  text-align: center;
+}
+
+label {
+  font-family: var(--font-medium);
+  font-size: 1.5rem;
+}
+
+input,
+textarea,
+::-webkit-input-placeholder {
+  display: block;
+  color: var(--color-dark);
+  font-family: var(--font-light);
+  font-size: 1rem;
+  line-height: 1.7;
+  padding-left: 0.5em;
+  margin-top: 1em;
+}
+
+input,
+textarea,
+:-ms-input-placeholder {
+  display: block;
+  color: var(--color-dark);
+  font-family: var(--font-light);
+  font-size: 1rem;
+  line-height: 1.7;
+  padding-left: 0.5em;
+  margin-top: 1em;
+}
+
+input,
+textarea,
+::-ms-input-placeholder {
+  display: block;
+  color: var(--color-dark);
+  font-family: var(--font-light);
+  font-size: 1rem;
+  line-height: 1.7;
+  padding-left: 0.5em;
+  margin-top: 1em;
+}
+
+input,
+textarea,
+::placeholder {
+  display: block;
+  color: var(--color-dark);
+  font-family: var(--font-light);
+  font-size: 1rem;
+  line-height: 1.7;
+  padding-left: 0.5em;
+  margin-top: 1em;
+}
+
+::-webkit-input-placeholder {
+  color: #bfbdbd;
+}
+
+:-ms-input-placeholder {
+  color: #bfbdbd;
+}
+
+::-ms-input-placeholder {
+  color: #bfbdbd;
+}
+
+::placeholder {
+  color: #bfbdbd;
+}
+
+label,
+textarea {
+  margin-bottom: 1em;
+}
+
+textarea {
+  width: 100%;
+  height: 5em;
+}
+
 button {
   text-transform: uppercase;
-}
-
-.section-title {
-  font-family: var(--font-regular);
-  font-size: 3rem;
-  text-transform: capitalize;
-  text-align: center;
-  margin-top: 3em;
-  line-height: 3.5rem;
-}
-
-input,
-textarea,
-::-webkit-input-placeholder {
-  font-family: var(--font-light);
-  font-size: 1rem;
-  line-height: 1.7;
-  padding-left: 0.5em;
-  margin-top: 1em;
-}
-
-input,
-textarea,
-:-ms-input-placeholder {
-  font-family: var(--font-light);
-  font-size: 1rem;
-  line-height: 1.7;
-  padding-left: 0.5em;
-  margin-top: 1em;
-}
-
-input,
-textarea,
-::-ms-input-placeholder {
-  font-family: var(--font-light);
-  font-size: 1rem;
-  line-height: 1.7;
-  padding-left: 0.5em;
-  margin-top: 1em;
-}
-
-input,
-textarea,
-::placeholder {
-  font-family: var(--font-light);
-  font-size: 1rem;
-  line-height: 1.7;
-  padding-left: 0.5em;
-  margin-top: 1em;
-}
-
-input,
-textarea {
-  color: var(--color-dark);
-}
-
-::-webkit-input-placeholder {
-  color: #bfbdbd;
-}
-
-:-ms-input-placeholder {
-  color: #bfbdbd;
-}
-
-::-ms-input-placeholder {
-  color: #bfbdbd;
-}
-
-::placeholder {
-  color: #bfbdbd;
 }
 
 /* ====================================
@@ -139,10 +154,6 @@ textarea {
 .container {
   max-width: 85em;
   margin: 0 auto;
-}
-
-.tcolor-hird {
-  color: var(--color-third);
 }
 
 /* ====================================

@@ -56,23 +56,23 @@ a:active {
             TYPOGRAPHY
 ======================================= */
 
-h2,
-button {
-  text-transform: uppercase;
+h1 {
+  font-family: var(--font-semibold);
+  font-size: 3rem;
+  margin: 3em 0 2em 0;
+  text-align: center;
 }
 
-.section-title {
-  font-family: var(--font-regular);
-  font-size: 3rem;
-  text-transform: capitalize;
-  text-align: center;
-  margin-top: 3em;
-  line-height: 3.5rem;
+label {
+  font-family: var(--font-medium);
+  font-size: 1.5rem;
 }
 
 input,
 textarea,
 ::placeholder {
+  display: block;
+  color: var(--color-dark);
   font-family: var(--font-light);
   font-size: 1rem;
   line-height: 1.7;
@@ -80,13 +80,22 @@ textarea,
   margin-top: 1em;
 }
 
-input,
-textarea {
-  color: var(--color-dark);
-}
-
 ::placeholder {
   color: rgb(191, 189, 189);
+}
+
+label,
+textarea {
+  margin-bottom: 1em;
+}
+  
+textarea {
+  width: 100%;
+  height: 5em;
+}
+
+button {
+  text-transform: uppercase;
 }
 
 /* ====================================
@@ -102,10 +111,6 @@ textarea {
 .container {
   max-width: 85em;
   margin: 0 auto;
-}
-
-.tcolor-hird {
-  color: var(--color-third);
 }
 
 /* ====================================

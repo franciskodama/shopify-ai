@@ -11,7 +11,7 @@ const Main = () => {
     e.preventDefault();
 
     const configuration = new Configuration({
-      apiKey: "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",
+      apiKey: "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",
     });
     setStatus("THINKING...");
     const openai = new OpenAIApi(configuration);
@@ -52,7 +52,7 @@ const Main = () => {
             />
 
             <button
-              className="btn btn--color-third"
+              className="btn btn--color"
               type="submit"
               style={{
                 backgroundColor:
