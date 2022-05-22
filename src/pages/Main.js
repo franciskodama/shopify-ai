@@ -64,11 +64,13 @@ const Main = () => {
     <>
       <header>
         <div className="container">
-          <img
-            src={Logo}
-            alt="Logo Francis Kodama Webdeveloper"
-            className="logo"
-          />
+          <a href="https://www.fkodama.com/" target="_blank">
+            <img
+              src={Logo}
+              alt="Logo Francis Kodama Webdeveloper"
+              className="logo"
+            />
+          </a>
           <p className="signature">
             <span>Shopify Challenge</span>
             <br></br>Frontend Developer
@@ -115,14 +117,13 @@ const Main = () => {
               />
 
               <div className="select-and-button">
-                <button className="engine-icon">
-                  <img
-                    src={QuestionMark}
-                    alt="question mark icon"
-                    onClick={() => setIsActive(!isActive)}
-                  />
+                <button
+                  className="engine-icon"
+                  onClick={() => setIsActive(!isActive)}
+                >
+                  <img src={QuestionMark} alt="question mark icon" />
                 </button>
-                <label for="engine">A.I. engine:</label>
+                <label htmlFor="engine">A.I. engine:</label>
                 <select
                   name="engine"
                   className="select"
