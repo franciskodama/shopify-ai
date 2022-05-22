@@ -12,6 +12,7 @@ const Main = () => {
   const [id, setId] = useState("");
   const [content, setContent] = useState([]);
   const [engine, setEngine] = useState("text-curie-001");
+  const [isActive, setIsActive] = useState(false);
 
   useEffect(() => {
     if (result) {
@@ -74,6 +75,41 @@ const Main = () => {
       <main>
         <section className="section">
           <div className="container">
+            <div
+              className="modal"
+              style={{ display: isActive ? "flex" : "none" }}
+            >
+              <p className="modal__title">
+                Choose an engine based on its characteristics:
+              </p>
+              <ul className="modal__engine">
+                <li className="modal__engine-title">Davinci</li>
+                <li className="modal__engine-description">
+                  {" "}
+                  Most capable engine. Can do any task the other models can do,
+                  often with less context.
+                </li>
+              </ul>
+              <ul className="modal__engine">
+                <li className="modal__engine-title">Curie</li>
+                <li className="modal__engine-description">
+                  Very capable, but faster!
+                </li>
+              </ul>
+              <ul className="modal__engine">
+                <li className="modal__engine-title">Babbage</li>
+                <li className="modal__engine-description">
+                  Capable of straightforward tasks and very fast.
+                </li>
+              </ul>
+              <ul className="modal__engine">
+                <li className="modal__engine-title">Ada</li>
+                <li className="modal__engine-description">
+                  Capable of very simple tasks, usually the fastest model in the
+                  GPT-3 series.
+                </li>
+              </ul>
+            </div>
             <p className="question">
               Can't you figure out what to watch on TV?
             </p>
@@ -106,37 +142,41 @@ const Main = () => {
                 required
               />
 
-              <p className="select-title">A.I. engine:</p>
-              <img
-                src={QuestionMark}
-                alt="question mark icon"
-                className="question-mark"
-              />
-              <select
-                className="select"
-                value={engine}
-                onChange={(e) => setEngine(e.target.value)}
-              >
-                <option value="text-davinci-001">DaVinci</option>
-                <option value="text-curie-001" defaultChecked>
-                  Curie
-                </option>
-                <option value="text-babbage-001">Babbage</option>
-                <option value="text-ada-001">Ada</option>
-              </select>
+              <div className="select-and-button">
+                <img
+                  src={QuestionMark}
+                  alt="question mark icon"
+                  className="engine-icon"
+                  onMouseEnter={() => setIsActive(true)}
+                  onMouseLeave={() => setIsActive(false)}
+                />
+                <p className="engine-title">A.I. engine:</p>
+                <select
+                  className="select"
+                  value={engine}
+                  onChange={(e) => setEngine(e.target.value)}
+                >
+                  <option value="text-davinci-002">Davinci</option>
+                  <option value="text-curie-001" defaultChecked>
+                    Curie
+                  </option>
+                  <option value="text-babbage-001">Babbage</option>
+                  <option value="text-ada-001">Ada</option>
+                </select>
 
-              <button
-                className="btn btn--color"
-                type="submit"
-                style={{
-                  backgroundColor:
-                    status === "THINKING..."
-                      ? "var(--color-dark)"
-                      : "var(--color-third)",
-                }}
-              >
-                {status}
-              </button>
+                <button
+                  className="btn btn--color"
+                  type="submit"
+                  style={{
+                    backgroundColor:
+                      status === "THINKING..."
+                        ? "var(--color-dark)"
+                        : "var(--color-third)",
+                  }}
+                >
+                  {status}
+                </button>
+              </div>
             </form>
 
             <ul className="result">

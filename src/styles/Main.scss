@@ -151,20 +151,91 @@ header {
   }
 }
 
-
-
 /* ====================================
                 SELECT
 ======================================= */
 
-.select-title {
-  font-family: var(--font-medium);
-  display: inline;
+.select-and-button {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2em;
 }
 
-.question-mark {
+.engine-icon {
   width: 20px;
+  cursor: pointer;
+}
+
+.modal {
+  display: flex;
+  position: absolute;
+  left: 50%;
+  top: 36%;
+  transform: translateX(-50%);
+  color: var(--color-bright);
+  background-color: var(--color-third);
+  padding: 2em;
+  width: auto;
+  text-align: left;
+  border-radius: 5px;
+  animation: modal-open 0.3s linear both;
+  z-index: 10;
+
+  @keyframes modal-open {
+    0% {
+      opacity: 0;
+      transform: scale(0) translateX(-50%);
+      transform-origin: 0% 100%;
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1) translateX(-50%);
+      transform-origin: 0% 100%;
+    }
+  }
+
+  // &:before {
+  //   content: "";
+  //   position: absolute;
+  //   width: 0;
+  //   height: 0;
+  //   border-top: 12px solid var(--color-third);
+  //   border-left: 12px solid transparent;
+  //   border-right: 12px solid transparent;
+  //   border-bottom: 12px solid transparent;
+  //   bottom: -23px;
+  //   left: 108px;
+  // }
+
+  &__title {
+    font-family: var(--font-semibold);
+    font-size: 0.8rem;
+    width: 8rem;
+    margin-right: 2em;
+  }
+
+  &__engine-title {
+    font-family: var(--font-medium);
+    text-transform: uppercase;
+    margin-left: 2em;
+    margin-bottom: 1em;
+  }
+
+  &__engine-description {
+    font-family: var(--font-regular);
+    font-size: 0.8rem;
+    width: 10em;
+    margin-left: 2em;
+  }
+}
+
+.engine-title {
+  font-family: var(--font-medium);
+  display: inline;
   margin-left: 0.5em;
+
 }
 
 .select {
@@ -172,7 +243,6 @@ header {
   font-size: 1rem;
   text-transform: uppercase;
   padding: 0.7em 2em;
-  margin-bottom: 2em;
   margin-left: 1em;
   border-radius: 5px;
   background-color: var(--color-dark);
@@ -190,8 +260,7 @@ header {
   font-size: 1rem;
   text-transform: uppercase;
   padding: 0.7em 2em;
-  margin-bottom: 2em;
-  margin-left: 1em;
+  margin-left: 3em;
   border-radius: 5px;
   cursor: pointer;
 }
