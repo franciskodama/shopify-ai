@@ -1,5 +1,4 @@
 import "../styles/Main.css";
-import Card from "../components/Card";
 import React, { useEffect, useState } from "react";
 import { Configuration, OpenAIApi } from "openai";
 import { v4 as uuidv4 } from "uuid";
@@ -61,6 +60,7 @@ const Main = () => {
 
         <main>
           <h1>Fun with AI</h1>
+          <p className="main__signature">Shopify Challenge by Francis Kodama</p>
 
           <form onSubmit={onSubmit}>
             <label>Enter prompt:</label>
@@ -86,13 +86,14 @@ const Main = () => {
             </button>
           </form>
 
-          <div className="main__result">
+          <ul className="main__result">
             {arrayOfResults.map(({ id, prompt, result }) => (
-              <p key={id}>
+              <li key={id}>
                 Your command: {prompt} My Answer: {result}
-              </p>
+              </li>
             ))}
-          </div>
+          </ul>
+          {/* <div className="main__result">{arrayOfResults[0].prompt}</div> */}
         </main>
       </div>
     </section>
