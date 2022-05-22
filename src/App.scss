@@ -31,14 +31,10 @@
 }
 
 body {
-  font-family: var(--font-thin);
+  font-family: var(--font-light);
   font-size: 100%;
-  background-color: var(--color-bright);
+  background-color: var(--color-dark);
   line-height: 1.6;
-}
-
-.section {
-  position: relative;
 }
 
 img {
@@ -84,28 +80,11 @@ textarea {
 }
   
 textarea {
+  resize: none;
   width: 100%;
   height: 5em;
 }
 
-button {
-  text-transform: uppercase;
-}
-
-/* ====================================
-            LAYOUT
-======================================= */
-
-.section {
-  width: 100%;
-  background-color: var(--color-dark);
-  overflow: hidden;
-}
-
-.container {
-  max-width: 85em;
-  margin: 0 auto;
-}
 
 /* ====================================
             MEDIA QUERY

@@ -1,4 +1,21 @@
 /* ====================================
+            GENERAL LAYOUT
+======================================= */
+
+.container {
+  text-align: center;
+  width: 100%;
+  max-width: 55em;
+  margin: 0 auto;
+}
+
+.section {
+  width: 100%;
+  overflow: hidden;
+  color: var(--color-bright);
+}
+
+/* ====================================
             TYPOGRAPHY
 ======================================= */
 
@@ -9,33 +26,82 @@ h1 {
     text-align: center;
   }
   
-.main__signature {
-    margin-bottom: 5em;
+/* ====================================
+                HEADER
+======================================= */
+
+header {
+  background-color: var(--color-dark);
+
+  .container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 3em 0;
+  }
 }
 
-.main {
-font-family: var(--font-light);
-background-color: var(--color-dark);
-color: var(--color-bright);
-height: 100vh;
+.logo {
+  flex: 0 0 7em;
+  width: 7em;
 }
 
-.main .container { 
-display: flex;
-flex-direction: column;
-text-align: center;
-width: 60%;
+.signature {
+  font-family: var(--font-medium);
+  color: var(--color-bright);
+  flex: 0 0 auto;
+  line-height: 1.5;
+  text-align: right;
 }
 
-.main__result {
-width: 100%;
-color: var(--color-dark);
-color: orange;
-font-family: var(--font-medium);
-font-size: 1.5rem;
-background-color: var(--color-bright);
+/* ====================================
+                MAIN
+======================================= */
+
+.title {
+  font-family: var(--font-semibold);
+  font-size: 3rem;
+  margin-top: 2em;
 }
 
+
+/* ====================================
+                RESULT
+======================================= */
+
+.result {
+  display: flex;
+  flex-direction: column-reverse;
+  width: 100%;
+  color: var(--color-dark);
+  font-family: var(--font-light);
+  background-color: var(--color-dark);
+  line-height: 1.5;
+  
+  &__item {
+    text-align: left;
+    padding: 1em 2em;
+    background-color: var(--color-bright);
+    margin-bottom: 1em;
+  }
+
+  &__prompt-wrapper,
+  &__answer-wrapper {
+    display: flex;
+  }
+
+  &__title {
+    padding: 0.5em 0;
+    width: 20%;
+    font-family: var(--font-medium);
+  }
+
+  &__text {
+    padding: 0.5em 0;
+    width: 80%;
+  }
+}
 
 /* ====================================
                 BUTTON
@@ -45,19 +111,21 @@ background-color: var(--color-bright);
 display: inline-block;
 font-family: var(--font-semibold);
 font-size: 1rem;
+text-transform: uppercase;
 padding: 0.7em 2em;
+margin-bottom: 2em;
 cursor: pointer;
 }
 
 .btn--color {
 color: var(--bright-color);
-border: 1px solid var(--third-color);
-background-color: var(--third-color);
+border: 1px solid var(--color-third);
+background-color: var(--color-third);
 transition: all 0.2s ease;
 }
     
 .btn--color:hover {
 transform: translate(5px, -5px);
-box-shadow: var(--third-color) 0px 0px 0px 0px inset,
-var(--dark-color) -5px 5px 0px -1px, var(--third-color) -5px 5px;
+box-shadow: var(--color-third) 0px 0px 0px 0px inset,
+var(--color-dark) -5px 5px 0px -1px, var(--color-third) -5px 5px;
 }
