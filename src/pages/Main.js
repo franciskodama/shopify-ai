@@ -6,7 +6,7 @@ import Logo from "../assets/images/logo-fkodama.svg";
 import QuestionMark from "../assets/images/ico-question.svg";
 
 const Main = () => {
-  const [status, setStatus] = useState("GET YOUR SUGGESTION");
+  const [status, setStatus] = useState("Get your suggestion");
   const [prompt, setPrompt] = useState("");
   const [result, setResult] = useState("");
   const [id, setId] = useState("");
@@ -49,7 +49,7 @@ const Main = () => {
         setId(uuidv4());
         setPrompt(prompt);
         setResult(response.data.choices[0].text.trim());
-        setStatus("WOW! I WANT MORE SUGGESTIONS :)");
+        setStatus("Wow! I want more suggestions :)");
       })
       .catch((error) => console.log(error.message));
   };
@@ -64,9 +64,7 @@ const Main = () => {
             className="logo"
           />
           <p className="signature">
-            <span style={{ color: "var(--color-third)" }}>
-              Shopify Challenge
-            </span>
+            <span>Shopify Challenge</span>
             <br></br>Frontend Developer
           </p>
         </div>
@@ -75,64 +73,31 @@ const Main = () => {
       <main>
         <section className="section">
           <div className="container">
-            <div
-              className="modal"
-              style={{ display: isActive ? "flex" : "none" }}
-            >
-              <p className="modal__title">
-                Choose an engine based on its characteristics:
-              </p>
-              <ul className="modal__engine">
-                <li className="modal__engine-title">Davinci</li>
-                <li className="modal__engine-description">
-                  {" "}
-                  Most capable engine. Can do any task the other models can do,
-                  often with less context.
-                </li>
-              </ul>
-              <ul className="modal__engine">
-                <li className="modal__engine-title">Curie</li>
-                <li className="modal__engine-description">
-                  Very capable, but faster!
-                </li>
-              </ul>
-              <ul className="modal__engine">
-                <li className="modal__engine-title">Babbage</li>
-                <li className="modal__engine-description">
-                  Capable of straightforward tasks and very fast.
-                </li>
-              </ul>
-              <ul className="modal__engine">
-                <li className="modal__engine-title">Ada</li>
-                <li className="modal__engine-description">
-                  Capable of very simple tasks, usually the fastest model in the
-                  GPT-3 series.
-                </li>
-              </ul>
-            </div>
             <p className="question">
               Can't you figure out what to watch on TV?
             </p>
             <h1 className="title">TV Suggestion Helper</h1>
 
             <form onSubmit={onSubmit}>
-              <ul className="examples">
+              <div className="examples">
                 <h2 className="examples__title">Check out some examples:</h2>
-                <li className="examples__item">
-                  Suggest a drama movie based on a true story with a good score
-                  on the rotten tomatoes website.
-                </li>
-                <li className="examples__item">
-                  What Brazilian comedy shows can I watch on Netflix today?
-                </li>
-                <li className="examples__item">
-                  Give me 3 suggestions of animation movies.
-                </li>
-                <li className="examples__item">
-                  What's the best thriller series available on Prime in Canada?
-                </li>
-              </ul>
-
+                <ul>
+                  <li className="examples__item">
+                    Suggest a drama movie based on a true story with a good
+                    score on the rotten tomatoes website.
+                  </li>
+                  <li className="examples__item">
+                    What Brazilian comedy shows can I watch on Netflix today?
+                  </li>
+                  <li className="examples__item">
+                    Give me 3 suggestions of animation movies.
+                  </li>
+                  <li className="examples__item">
+                    What's the best thriller series available on Prime in
+                    Canada?
+                  </li>
+                </ul>
+              </div>
               <textarea
                 type="text"
                 name="prompt"
@@ -143,15 +108,16 @@ const Main = () => {
               />
 
               <div className="select-and-button">
-                <img
-                  src={QuestionMark}
-                  alt="question mark icon"
-                  className="engine-icon"
-                  onMouseEnter={() => setIsActive(true)}
-                  onMouseLeave={() => setIsActive(false)}
-                />
-                <p className="engine-title">A.I. engine:</p>
+                <button className="engine-icon">
+                  <img
+                    src={QuestionMark}
+                    alt="question mark icon"
+                    onClick={() => setIsActive(!isActive)}
+                  />
+                </button>
+                <label for="engine">A.I. engine:</label>
                 <select
+                  name="engine"
                   className="select"
                   value={engine}
                   onChange={(e) => setEngine(e.target.value)}
@@ -169,24 +135,60 @@ const Main = () => {
                   type="submit"
                   style={{
                     backgroundColor:
-                      status === "THINKING..."
+                      status === "Thinking..."
                         ? "var(--color-dark)"
                         : "var(--color-third)",
                   }}
                 >
                   {status}
                 </button>
+
+                <ul
+                  className="modal"
+                  style={{ display: isActive ? "flex" : "none" }}
+                >
+                  <li className="modal__title">
+                    Choose an engine based on its characteristics:
+                  </li>
+                  <li className="modal__engine">
+                    <h3 className="modal__engine-title">Davinci</h3>
+                    <p className="modal__engine-description">
+                      {" "}
+                      Most capable engine. Can do any task the other models can
+                      do, often with less context.
+                    </p>
+                  </li>
+                  <li className="modal__engine">
+                    <h3 className="modal__engine-title">Curie</h3>
+                    <p className="modal__engine-description">
+                      Very capable, but faster!
+                    </p>
+                  </li>
+                  <li className="modal__engine">
+                    <h3 className="modal__engine-title">Babbage</h3>
+                    <p className="modal__engine-description">
+                      Capable of straightforward tasks and very fast.
+                    </p>
+                  </li>
+                  <li className="modal__engine">
+                    <h3 className="modal__engine-title">Ada</h3>
+                    <p className="modal__engine-description">
+                      Capable of very simple tasks, usually the fastest model in
+                      the GPT-3 series.
+                    </p>
+                  </li>
+                </ul>
               </div>
             </form>
 
             <ul className="result">
               {content.map(({ id, prompt, result }) => (
                 <li className="result__item" key={id}>
-                  <div className="result__prompt-wrapper">
+                  <div className="result__wrapper">
                     <h4 className="result__title">Your question:</h4>
                     <p className="result__text">{prompt}</p>
                   </div>
-                  <div className="result__answer-wrapper">
+                  <div className="result__wrapper">
                     <h4 className="result__title">My Suggestion:</h4>
                     <p className="result__text">{result}</p>
                   </div>

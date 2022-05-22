@@ -123,7 +123,7 @@ textarea {
 textarea {
   resize: none;
   width: 100%;
-  height: 5em;
+  height: 10em;
   border-radius: 5px;
   padding: 0.5em 2em;
 }

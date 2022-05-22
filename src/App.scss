@@ -11,11 +11,6 @@
   --color-dark: #1c1c1c;
   --color-bright: #ffffff;
   --color-third: #ed1c24;
-
-  --color-dark-two: grey;
-  --color-third-two: orange;
-  --color-dark-three: indigo;
-  --color-third-three: rgb(154, 154, 0);
 }
 
 /* ====================================
@@ -80,7 +75,7 @@ textarea {
 textarea {
   resize: none;
   width: 100%;
-  height: 5em;
+  height: 10em;
   border-radius: 5px;
   padding: 0.5em 2em;
 }
