@@ -6,23 +6,18 @@
 
 # this.Project 📖
 
-100% React-based, this is my most important project built.
+100% React-based, this is a project that I worked with some engines of artificial intelligence created by OpenAI. They have trained cutting-edge language models that are very good at understanding and generating text. Their API provides access to some models and can be used to solve virtually any task that involves processing language. In my case, I used one of their engines to generate suggestions of what to watch on TV, movies or TV series. Try it!
 
 ## Why?
 
-Rather than make a "to-do list" project after taking a React course, I thought it would be more productive to build a bold project where I could apply what I've learned and study new things to go beyond what I already knew.
-</br>
-</br>
-
-## How?
-
-As a product strategist, I began by thinking about how to create a portfolio that would appeal to employers seeking talent with my skills.
+The Frontend Developer Intern Challenge of Shopify required me to use artificial intelligence on this project. The project was challenging, but also fun to work on.
 </br>
 </br>
 
 ## What?
 
-From many sketches, designing the project on Figma, to coding afterward, in each step, the portfolio was built intentionally gathering new knowledge and new understandings.
+I wanted to participate in this challenge by building something that could be useful and valuable for someone, and of course, something that could be also a good idea to showcase my creativity. So, instead of using one of the examples on OpenAPI examples, I created the TV Suggestion Helper App, which gives you suggestions based on your question about what to watch on TV at that moment when you have no idea what to watch.
+
 </br>
 </br>
 
