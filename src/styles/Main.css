@@ -183,6 +183,32 @@ header .container {
 }
 
 /* ====================================
+                SELECT
+======================================= */
+.select-title {
+  font-family: var(--font-medium);
+  display: inline;
+}
+
+.question-mark {
+  width: 20px;
+  margin-left: 0.5em;
+}
+
+.select {
+  font-family: var(--font-semibold);
+  font-size: 1rem;
+  text-transform: uppercase;
+  padding: 0.7em 2em;
+  margin-bottom: 2em;
+  margin-left: 1em;
+  border-radius: 5px;
+  background-color: var(--color-dark);
+  color: var(--bright-color);
+  cursor: pointer;
+}
+
+/* ====================================
                 BUTTON
 ======================================= */
 .btn {
@@ -192,6 +218,7 @@ header .container {
   text-transform: uppercase;
   padding: 0.7em 2em;
   margin-bottom: 2em;
+  margin-left: 1em;
   border-radius: 5px;
   cursor: pointer;
 }

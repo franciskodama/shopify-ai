@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { Configuration, OpenAIApi } from "openai";
 import { v4 as uuidv4 } from "uuid";
 import Logo from "../assets/images/logo-fkodama.svg";
+import QuestionMark from "../assets/images/ico-question.svg";
 
 const Main = () => {
   const [status, setStatus] = useState("GET YOUR SUGGESTION");
@@ -10,6 +11,7 @@ const Main = () => {
   const [result, setResult] = useState("");
   const [id, setId] = useState("");
   const [content, setContent] = useState([]);
+  const [engine, setEngine] = useState("text-curie-001");
 
   useEffect(() => {
     if (result) {
@@ -34,7 +36,7 @@ const Main = () => {
     const openai = new OpenAIApi(configuration);
 
     openai
-      .createCompletion("text-curie-001", {
+      .createCompletion(engine, {
         prompt: prompt,
         temperature: 1,
         max_tokens: 200,
@@ -101,7 +103,27 @@ const Main = () => {
                 placeholder="Give me a good suggestion of..."
                 value={prompt}
                 onChange={(e) => setPrompt(e.target.value)}
+                required
               />
+
+              <p className="select-title">A.I. engine:</p>
+              <img
+                src={QuestionMark}
+                alt="question mark icon"
+                className="question-mark"
+              />
+              <select
+                className="select"
+                value={engine}
+                onChange={(e) => setEngine(e.target.value)}
+              >
+                <option value="text-davinci-001">DaVinci</option>
+                <option value="text-curie-001" defaultChecked>
+                  Curie
+                </option>
+                <option value="text-babbage-001">Babbage</option>
+                <option value="text-ada-001">Ada</option>
+              </select>
 
               <button
                 className="btn btn--color"
