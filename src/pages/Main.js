@@ -1,5 +1,5 @@
 import "../styles/Main.css";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Configuration, OpenAIApi } from "openai";
 import { v4 as uuidv4 } from "uuid";
 import Logo from "../assets/images/logo-fkodama.svg";
@@ -13,6 +13,11 @@ const Main = () => {
   const [content, setContent] = useState([]);
   const [engine, setEngine] = useState("text-curie-001");
   const [isActive, setIsActive] = useState(false);
+  const textAreaRef = useRef(null);
+
+  useEffect(() => {
+    textAreaRef.current.focus();
+  }, []);
 
   useEffect(() => {
     if (result) {
@@ -24,6 +29,7 @@ const Main = () => {
 
       const updatedContent = [...content, newResult];
       setContent(updatedContent);
+      setPrompt("");
     }
   }, [result]);
 
@@ -99,6 +105,7 @@ const Main = () => {
                 </ul>
               </div>
               <textarea
+                ref={textAreaRef}
                 type="text"
                 name="prompt"
                 placeholder="Give me a good suggestion of..."
