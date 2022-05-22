@@ -5,7 +5,7 @@ import { v4 as uuidv4 } from "uuid";
 import Logo from "../assets/images/logo-fkodama.svg";
 
 const Main = () => {
-  const [status, setStatus] = useState("COMMAND");
+  const [status, setStatus] = useState("GET YOUR SUGGESTION");
   const [prompt, setPrompt] = useState("");
   const [result, setResult] = useState("");
   const [id, setId] = useState("");
@@ -20,7 +20,6 @@ const Main = () => {
       };
 
       const updatedContent = [...content, newResult];
-
       setContent(updatedContent);
     }
   }, [result]);
@@ -47,7 +46,7 @@ const Main = () => {
         setId(uuidv4());
         setPrompt(prompt);
         setResult(response.data.choices[0].text.trim());
-        setStatus("COMMAND AGAIN");
+        setStatus("WOW! I WANT MORE SUGGESTIONS :)");
       })
       .catch((error) => console.log(error.message));
   };
@@ -62,7 +61,10 @@ const Main = () => {
             className="logo"
           />
           <p className="signature">
-            Shopify Challenge <br></br>Frontend Developer
+            <span style={{ color: "var(--color-third)" }}>
+              Shopify Challenge
+            </span>
+            <br></br>Frontend Developer
           </p>
         </div>
       </header>
@@ -70,22 +72,33 @@ const Main = () => {
       <main>
         <section className="section">
           <div className="container">
-            <h1 className="title">Fun with AI</h1>
+            <p className="question">
+              Can't you figure out what to watch on TV?
+            </p>
+            <h1 className="title">TV Suggestion Helper</h1>
 
             <form onSubmit={onSubmit}>
-              <p className="examples">Tell me 3 names for an cat.</p>
-              <p className="examples">
-                Give me a suggestion of giftsTell me 3 names for an cat.
-              </p>
-              <p className="examples">
-                Write me a cold email for small business
-              </p>
+              <ul className="examples">
+                <h2 className="examples__title">Check out some examples:</h2>
+                <li className="examples__item">
+                  Suggest a drama movie based on a true story with a good score
+                  on the rotten tomatoes website.
+                </li>
+                <li className="examples__item">
+                  What Brazilian comedy shows can I watch on Netflix today?
+                </li>
+                <li className="examples__item">
+                  Give me 3 suggestions of animation movies.
+                </li>
+                <li className="examples__item">
+                  What's the best thriller series available on Prime in Canada?
+                </li>
+              </ul>
 
-              <label>Enter prompt:</label>
               <textarea
                 type="text"
                 name="prompt"
-                placeholder="What is your demand, Master?"
+                placeholder="Give me a good suggestion of..."
                 value={prompt}
                 onChange={(e) => setPrompt(e.target.value)}
               />
@@ -108,11 +121,11 @@ const Main = () => {
               {content.map(({ id, prompt, result }) => (
                 <li className="result__item" key={id}>
                   <div className="result__prompt-wrapper">
-                    <h4 className="result__title">Your command:</h4>
+                    <h4 className="result__title">Your question:</h4>
                     <p className="result__text">{prompt}</p>
                   </div>
                   <div className="result__answer-wrapper">
-                    <h4 className="result__title">My Answer:</h4>
+                    <h4 className="result__title">My Suggestion:</h4>
                     <p className="result__text">{result}</p>
                   </div>
                 </li>
@@ -126,110 +139,3 @@ const Main = () => {
 };
 
 export default Main;
-
-// const Main = () => {
-//   const [status, setStatus] = useState("COMMAND");
-//   const [prompt, setPrompt] = useState("");
-//   const [content, setContent] = useState({
-//     id: "",
-//     prompt: "",
-//     result: "",
-//   });
-//   const uniqueId = uuidv4();
-//   const arrayOfResults = [];
-
-//   useEffect(() => {
-//     arrayOfResults.push(content);
-//     console.log(
-//       arrayOfResults[0].id,
-//       arrayOfResults[0].prompt,
-//       arrayOfResults[0].result
-//     );
-//     setStatus("COMMAND AGAIN");
-//   }, [content]);
-
-//   const onSubmit = (e) => {
-//     e.preventDefault();
-//     const configuration = new Configuration({
-//       apiKey: process.env.REACT_APP_OPENAI_API_KEY,
-//     });
-//     setStatus("THINKING...");
-//     const openai = new OpenAIApi(configuration);
-
-//     openai
-//       .createCompletion("text-curie-001", {
-//         prompt: prompt,
-//         temperature: 0.5,
-//         max_tokens: 60,
-//         top_p: 1,
-//         frequency_penalty: 0,
-//         presence_penalty: 0,
-//       })
-//       .then((response) => {
-//         setContent((prev) => ({
-//           ...prev,
-//           id: uniqueId,
-//           prompt: prompt,
-//           result: response.data.choices[0].text,
-//         }));
-//       })
-//       .catch((error) => {
-//         if (error.response) {
-//           console.log(error.message);
-//         }
-//       });
-//   };
-
-//   return (
-//     <section className="main">
-//       <div className="container">
-//         <title>Shopify Challenge by Francis Kodama</title>
-
-//         <main>
-//           <h1>Fun with AI</h1>
-//           <p className="main__signature">Shopify Challenge by</p>
-//           <img
-//             src={Logo}
-//             alt="Logo Francis Kodama Webdeveloper"
-//             className="main__logo"
-//           />
-
-//           <form onSubmit={onSubmit}>
-//             <label>Enter prompt:</label>
-//             <textarea
-//               type="text"
-//               name="prompt"
-//               placeholder="What is your demand, Master?"
-//               value={prompt}
-//               onChange={(e) => setPrompt(e.target.value)}
-//             />
-
-//             <button
-//               className="btn btn--color"
-//               type="submit"
-//               style={{
-//                 backgroundColor:
-//                   status === "THINKING..."
-//                     ? "var(--color-dark)"
-//                     : "var(--color-third)",
-//               }}
-//             >
-//               {status}
-//             </button>
-//           </form>
-
-//           <ul className="main__result">
-//             {arrayOfResults.map(({ id, prompt, result }) => (
-//               <li key={id}>
-//                 Your command: {prompt} My Answer: {result}
-//               </li>
-//             ))}
-//           </ul>
-
-//         </main>
-//       </div>
-//     </section>
-//   );
-// };
-
-// export default Main;

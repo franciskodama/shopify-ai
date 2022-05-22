@@ -1,12 +1,15 @@
 /* ====================================
-            GENERAL LAYOUT
+              STRUCTURE
 ======================================= */
 
 .container {
+  font-family: var(--font-light);
+  line-height: 1.3;
   text-align: center;
   width: 100%;
   max-width: 55em;
   margin: 0 auto;
+  padding: 0 1em;
 }
 
 .section {
@@ -14,17 +17,6 @@
   overflow: hidden;
   color: var(--color-bright);
 }
-
-/* ====================================
-            TYPOGRAPHY
-======================================= */
-
-h1 {
-    font-family: var(--font-semibold);
-    font-size: 3rem;
-    margin-top: 3em;
-    text-align: center;
-  }
   
 /* ====================================
                 HEADER
@@ -38,7 +30,7 @@ header {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: 3em 0;
+    padding: 3em 1em;
   }
 }
 
@@ -49,6 +41,7 @@ header {
 
 .signature {
   font-family: var(--font-medium);
+  font-size: 0.8rem;
   color: var(--color-bright);
   flex: 0 0 auto;
   line-height: 1.5;
@@ -59,12 +52,48 @@ header {
                 MAIN
 ======================================= */
 
-.title {
-  font-family: var(--font-semibold);
-  font-size: 3rem;
-  margin-top: 2em;
+.question {
+  font-family: var(--font-medium);
+  font-size: 1rem;
+  margin: 1em 0 0.2em 0;
+  padding: 0.2em;
 }
 
+.title {
+  font-family: var(--font-semibold);
+  font-size: 2rem;
+  margin: 0.2em 0 1em 0;
+  border: 1px solid var(--color-bright);
+  border-radius: 10px;
+  padding: 0.3em;
+}
+
+/* ====================================
+                EXAMPLES
+======================================= */
+
+.examples {
+  font-family: var(--font-semibold);
+  border: 1px dashed var(--color-third);
+  width: 100%;
+  padding: 1em;
+  margin: 0 auto;
+  margin-bottom: 2em;
+  border-radius: 10px;
+  color: var(--color-third);
+
+  &__title {
+    margin-bottom: 1em;
+  }
+
+  &__item {
+  font-family: var(--font-light);
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--color-bright);
+
+  }
+}
 
 /* ====================================
                 RESULT
@@ -81,9 +110,10 @@ header {
   
   &__item {
     text-align: left;
-    padding: 1em 2em;
+    padding: 1em 1em;
     background-color: var(--color-bright);
     margin-bottom: 1em;
+    border-radius: 5px;
   }
 
   &__prompt-wrapper,
@@ -93,13 +123,14 @@ header {
 
   &__title {
     padding: 0.5em 0;
-    width: 20%;
+    width: 25%;
     font-family: var(--font-medium);
+    font-size: 0.8rem;
   }
 
   &__text {
-    padding: 0.5em 0;
-    width: 80%;
+    padding: 0.5em 0 0.5em 1em;
+    width: 75%;
   }
 }
 
@@ -108,24 +139,50 @@ header {
 ======================================= */
 
 .btn {
-display: inline-block;
-font-family: var(--font-semibold);
-font-size: 1rem;
-text-transform: uppercase;
-padding: 0.7em 2em;
-margin-bottom: 2em;
-cursor: pointer;
+  display: inline-block;
+  font-family: var(--font-semibold);
+  font-size: 1rem;
+  text-transform: uppercase;
+  padding: 0.7em 2em;
+  margin-bottom: 2em;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
 .btn--color {
-color: var(--bright-color);
-border: 1px solid var(--color-third);
-background-color: var(--color-third);
-transition: all 0.2s ease;
+  color: var(--bright-color);
+  border: 1px solid var(--color-third);
+  background-color: var(--color-third);
+  transition: all 0.2s ease;
 }
     
 .btn--color:hover {
-transform: translate(5px, -5px);
-box-shadow: var(--color-third) 0px 0px 0px 0px inset,
-var(--color-dark) -5px 5px 0px -1px, var(--color-third) -5px 5px;
+  transform: translate(5px, -5px);
+  box-shadow: var(--color-third) 0px 0px 0px 0px inset,
+  var(--color-dark) -5px 5px 0px -1px, var(--color-third) -5px 5px;
 }
+
+  /* ====================================
+              MEDIA QUERY
+  ======================================= */
+
+@media only screen and (min-width: 48em) {
+  .title {
+    font-size: 3rem;
+  }
+
+  .result__item {
+    padding: 1em 2em;
+  }
+
+  .result__title {
+    font-size: 1rem;
+    width: 20%;
+  }
+
+  .result__text {
+    padding: 0.5em 0;
+    width: 80%;
+  }
+}
+  

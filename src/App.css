@@ -119,13 +119,14 @@ textarea,
 
 label,
 textarea {
-  margin-bottom: 1em;
+  margin-bottom: 2em;
 }
 
 textarea {
   resize: none;
   width: 100%;
   height: 5em;
+  border-radius: 5px;
 }
 
 /* ====================================
