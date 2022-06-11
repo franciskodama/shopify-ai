@@ -1,23 +1,24 @@
 ### Hi there! I'm Francis Kodama! 👋
 
-## WELCOME TO MY AI PROJECT. 🤖
+## WELCOME TO MY A.I. 🤖 PROJECT SO CALLED TV HELPER. 📺
 
 <hr />
 
 # this.Project 📖
 
-100% React-based, this is a project that I worked with some engines of artificial intelligence created by OpenAI. They have trained cutting-edge language models that are very good at understanding and generating text. Their API provides access to some models and can be used to solve virtually any task that involves processing language. In my case, I used one of their engines to generate suggestions of what to watch on TV, movies or TV series. Try it!
+100% React-based, this is a project that I worked with some engines of artificial intelligence created by OpenAI. They have trained cutting-edge language models that are very good at understanding and generating text. Their API provides access to some models and can be used to solve virtually any task that involves processing language. In my case, I used one of their engines to generate suggestions of what to watch on TV, movies or TV series.
 
 ## Why?
 
-The Frontend Developer Intern Challenge of Shopify required me to use artificial intelligence on this project. The project was challenging, but also fun to work on.
+Whenever we watch TV, my wife and I always have trouble deciding what to watch. The reason for this is that sometimes we want to watch a comedy, another day a drama, and another day a European film. However, where do you find something so specific? That's where OpenAPI comes into play! With OpenAPI we can use great engines of Artificial Intelligence to help us find the film if we ask very specific questions. Try it!
+
 </br>
 </br>
 
-## What?
+## IMPORTANT!
 
-I wanted to participate in this challenge by building something that could be useful and valuable for someone, and of course, something that could be also a good idea to showcase my creativity. So, instead of using one of the examples on OpenAPI examples, I created the TV Suggestion Helper App, which gives you suggestions based on your question about what to watch on TV at that moment when you have no idea what to watch.
-
+In order to use this code, you must create an account on their website and use their key.
+https://openai.com/
 </br>
 </br>
 
